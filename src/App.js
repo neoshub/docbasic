@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import ResponseExample from './components/Response/ResponseExample';
+import JsonViewer from './components/Body/Body';
+import data from './data.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main'>
+      <h2>Get current user account information</h2>
+      <div className='url-main'>
+        <div className='get-text'>
+          GET
+        </div>
+        <div className='get-url'>
+          https://api-v3.screenmeet.com/v3/me
+        </div>
+      </div>
+      <div className='container'>
+        <div className='left-panel'>
+          <p>Get current user account information</p>
+          <JsonViewer data={data} />
+        </div>
+        <div className='right-panel'>
+          <ResponseExample />
+        </div>
+      </div>
     </div>
   );
 }

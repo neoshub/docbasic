@@ -1,0 +1,26 @@
+.body-heading {
+    padding-right: 24px;
+    padding-bottom: 25px;
+    padding-top: 4px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.full-key {
+  border-left: 1px solid #d9e0eb;
+  padding-top: 5px;
+}
+
+.body-key {
+  font-weight: 600;
+  display: inline;
+}
+
+.body-value {
+    color: #262626b3;
+}
+
+.minus {
+    font-weight: 100;
+    color: #d9e0eb;
+}
