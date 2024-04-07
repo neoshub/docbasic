@@ -5,7 +5,8 @@ import JsonViewer from '../Body/Body';
 const Responses = ({ data, setStatusData }) => {
 	const [status, setStatus] = useState(true);
 	const errorText = 'Authorization Problem - either the JWT is malformed or the signature is bad, or permission is denied';
-	const statusChangeHandler = () => {
+	const statusChangeHandler = (statusClick) => {
+		if (status === statusClick) return;
 		setStatus(!status);
 		setStatusData(!status);
 	}
@@ -16,13 +17,13 @@ const Responses = ({ data, setStatusData }) => {
 			<div className='status-buttons'>
 				<div
 					className={status ? 'status-active status-200-active' : 'status-200'}
-					onClick={statusChangeHandler}
+					onClick={() => statusChangeHandler(true)}
 				>
 					200
 				</div>
 				<div
 					className={status ? 'status-403' : 'status-active status-403-active'}
-					onClick={statusChangeHandler}
+					onClick={() => statusChangeHandler(false)}
 				>
 					403
 				</div>

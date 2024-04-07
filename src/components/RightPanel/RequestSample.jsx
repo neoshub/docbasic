@@ -1,10 +1,24 @@
 import React from 'react';
 import './Response.css';
 
-const RequestSample = ({ url }) => {
+const RequestSample = ({
+  url,
+  authorization,
+  server,
+  statusCode,
+  type,
+}) => {
+  const preferCode = server === 'mockServer' ? `,
+      Prefer: '${statusCode}${type}'`: '';
   const codeString = `\
   const url = '${url}';
-  const options = { method: 'GET', headers: { Authorization: '', Accept: 'application/json' }};
+  const options = { 
+    method: 'GET', 
+    headers: { 
+      Authorization: '${authorization.Authorization}', 
+      Accept: 'application/json'${preferCode}
+    }
+  }};
 
   try {
     const response = await fetch(url, options);
@@ -25,12 +39,12 @@ const RequestSample = ({ url }) => {
   };
 
   return (
-    <div className='response-container' style={{ marginTop: 50 }}>
-      <div className='response-header'>
-        <div className='response-example'>Request Sample: Javascript/Fetch</div>
+    <div className='light-container' style={{ marginTop: 50 }}>
+      <div className='light-header'>
+        <div className='light-example'>Request Sample: Javascript/Fetch</div>
         <div className='copy-button' onClick={copyToClipboard}>Copy</div>
       </div>
-      <div className='response-code'>
+      <div className='light-code'>
         <pre>{codeString}</pre>
       </div>
     </div>

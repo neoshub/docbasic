@@ -9,6 +9,7 @@ function App() {
   const [rerender, setRerender] = useState(false);
 
   const apiClickHandler = (apiDetails) => {
+    if (activeApi.id === apiDetails.id) return;
     setActiveApi(apiDetails);
     setRerender(true);
   };
@@ -31,7 +32,7 @@ function App() {
               key={d.id}
             >
               <span>{d.displayName}</span>
-              <span className='float-right color-green'>{d.type}</span>
+              <span className='float-right color-green'>{d.method}</span>
             </div>
           })}
         </div>
