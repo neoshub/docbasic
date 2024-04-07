@@ -1,9 +1,17 @@
 import './App.css';
 import ResponseExample from './components/Response/ResponseExample';
-import JsonViewer from './components/Body/Body';
-import data from './data.json';
+import Request from './components/Request/Request';
+import Responses from './components/Responses/Responses';
+import success from './data/data.json';
+import error from './data/error-data.json';
+import { useState } from 'react';
 
 function App() {
+  const [data, setData] = useState(success);
+  const setStatusData = (status) => {
+    setData(status ? success : error);
+  };
+
   return (
     <div className='main'>
       <h2>Get current user account information</h2>
@@ -16,12 +24,15 @@ function App() {
         </div>
       </div>
       <div className='container'>
+        {/* Left Panel */}
         <div className='left-panel'>
           <p>Get current user account information</p>
-          <JsonViewer data={data} />
+          <Request />
+          <Responses data={data} setStatusData={setStatusData} />
         </div>
+        {/* Right Panel */}
         <div className='right-panel'>
-          <ResponseExample />
+          <ResponseExample jsonData={data} />
         </div>
       </div>
     </div>

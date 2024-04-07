@@ -62,7 +62,7 @@ const JsonViewer = ({ data }) => {
 
   return (
     <div>
-      <div className='body-heading'>Body</div>
+      <div className='sub-heading'>Body</div>
       {renderJson(data)}
     </div>
   );

@@ -9,7 +9,6 @@
   background-color: #e0e6f0;
   padding: 10px;
   border-radius: 5px 5px 0 0;
-  
 }
 
 .response-example {
@@ -29,6 +28,12 @@
   background-color: #ebeef5;
   padding: 0 25px 10px 25px;
   border-radius: 0 0 5px 5px;
-  height: 700px;
+  max-height: 700px;
   overflow-y: scroll;
+  width: 300px;
+}
+
+.status-text {
+  padding-bottom: 20px;
+  font-size: 15px;
 }

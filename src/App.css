@@ -47,3 +47,16 @@
   flex: 1;
   padding: 20px;
 }
+
+.heading {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sub-heading {
+  padding-right: 24px;
+  padding-bottom: 25px;
+  padding-top: 4px;
+  font-weight: 600;
+  font-size: 16px;
+}

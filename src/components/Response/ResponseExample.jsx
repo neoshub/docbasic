@@ -1,9 +1,8 @@
 import React from 'react';
-import jsonData from '../../data.json';
 import JsonWithLineNumbers from './JsonWithLineNumbers';
 import './Response.css';
 
-const ResponseExample = () => {
+const ResponseExample = (jsonData) => {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(jsonData)
       .then(() => {
