@@ -1,43 +1,43 @@
+import { useEffect, useState } from 'react';
+import ApiDetails from './ApiDetails';
+import apiData from './data/apis.json';
 import './App.css';
-import ResponseExample from './components/RightPanel/ResponseExample';
-import Request from './components/Request/Request';
-import Responses from './components/Responses/Responses';
-import success from './data/data.json';
-import error from './data/error-data.json';
-import { useState } from 'react';
-import RequestSample from './components/RightPanel/RequestSample';
-import Parameters from './components/RightPanel/Parameters';
 
 function App() {
-  const [data, setData] = useState(success);
-  const setStatusData = (status) => {
-    setData(status ? success : error);
+  const data = apiData.data;
+  const [activeApi, setActiveApi] = useState(data[0]);
+  const [rerender, setRerender] = useState(false);
+
+  const apiClickHandler = (apiDetails) => {
+    setActiveApi(apiDetails);
+    setRerender(true);
   };
 
+  useEffect(() => {
+    rerender && setRerender(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rerender]);
+
   return (
-    <div className='main'>
-      <h2>Get current user account information</h2>
-      <div className='url-main'>
-        <div className='get-text'>
-          GET
-        </div>
-        <div className='get-url'>
-          https://api-v3.screenmeet.com/v3/me
+    <div className='container'>
+      <div className='menu'>
+        <div className='menu-header'>API Reference</div>
+        <div>
+          {data.map((d) => {
+            const name = 'menu-item ' + (activeApi.id === d.id ? 'menu-active' : '');
+            return <div
+              className={name}
+              onClick={() => apiClickHandler(d)}
+              key={d.id}
+            >
+              <span>{d.displayName}</span>
+              <span className='float-right color-green'>{d.type}</span>
+            </div>
+          })}
         </div>
       </div>
-      <div className='container'>
-        {/* Left Panel */}
-        <div className='left-panel'>
-          <p>Get user information for currently authenticated user.</p>
-          <Request />
-          <Responses data={data} setStatusData={setStatusData} />
-        </div>
-        {/* Right Panel */}
-        <div className='right-panel'>
-          <Parameters />
-          <RequestSample jsonData={data} />
-          <ResponseExample jsonData={data} />
-        </div>
+      <div className='api-details'>
+        {!rerender && <ApiDetails apiDetails={activeApi} />}
       </div>
     </div>
   );

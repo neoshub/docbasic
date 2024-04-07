@@ -15,13 +15,13 @@ const Responses = ({ data, setStatusData }) => {
 			<div className='responses-heading'>Responses</div>
 			<div className='status-buttons'>
 				<div
-					className={status ? 'active status-200-active' : 'status-200'}
+					className={status ? 'status-active status-200-active' : 'status-200'}
 					onClick={statusChangeHandler}
 				>
 					200
 				</div>
 				<div
-					className={status ? 'status-403' : 'active status-403-active'}
+					className={status ? 'status-403' : 'status-active status-403-active'}
 					onClick={statusChangeHandler}
 				>
 					403

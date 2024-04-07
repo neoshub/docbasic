@@ -1,7 +1,6 @@
 import React from 'react';
 import './Response.css';
 
-
 const RequestSample = ({ url }) => {
   const codeString = `\
   const url = '${url}';
