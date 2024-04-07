@@ -14,7 +14,7 @@ const ResponseExample = (jsonData) => {
   };
 
   return (
-    <div className='response-container'>
+    <div className='response-container' style={{ marginTop: 50 }}>
       <div className='response-header'>
         <div className='response-example'>Response Example</div>
         <div className='copy-button' onClick={copyToClipboard}>Copy</div>

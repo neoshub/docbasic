@@ -36,7 +36,7 @@ const JsonWithLineNumbers = ({ data }) => {
   };
 
   return (
-    <pre style={{ lineHeight: '1.6', overflowX: 'auto' }}>
+    <pre style={{ lineHeight: '1.6' }}>
       {renderJsonWithLineNumbers()}
     </pre>
   );

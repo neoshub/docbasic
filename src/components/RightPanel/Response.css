@@ -1,0 +1,91 @@
+.response-container {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: 5px;
+  background-color: #ebeef5;
+}
+
+.response-header {
+  background-color: #e0e6f0;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.response-example {
+  display: inline;
+  color: #262626;
+}
+
+.copy-button {
+  display: inline;
+  float: right;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.response-json {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  background-color: #ebeef5;
+  padding: 0 25px 10px 25px;
+  border-radius: 0 0 5px 5px;
+  max-height: 700px;
+  overflow-y: scroll;
+  width: 300px;
+}
+
+.status-text {
+  padding-bottom: 20px;
+  font-size: 15px;
+}
+
+.response-code {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  background-color: #ebeef5;
+  padding: 0 25px 10px 0px;
+  border-radius: 0 0 5px 5px;
+  max-height: 700px;
+  overflow-y: scroll;
+  max-width: 325px;
+}
+
+.parameters-header {
+  background-color: #212a3b;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.parameters-example {
+  display: inline;
+}
+
+.parameters-container {
+  background-color: #2d394e;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: 5px;
+  color: #DBDBDB;
+}
+
+.parameters-text {
+  padding: 15px;
+}
+
+.text-field {
+  background-color: #2d394e;
+  border: none;
+  color: #DBDBDB;
+}
+
+.button-class {
+  background-color: #12a0f3;
+  color: #DBDBDB;
+  border: none;
+  border-radius: 2px;
+  padding: 2px 5px;
+  margin-top: 20px;
+  font-size: 12px;
+  cursor: block;
+  cursor: not-allowed;
+}
