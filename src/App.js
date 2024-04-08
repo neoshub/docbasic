@@ -32,7 +32,14 @@ function App() {
               key={d.id}
             >
               <span>{d.displayName}</span>
-              <span className='float-right color-green'>{d.method}</span>
+              {d.displayName === 'authorization'? (
+        <p></p>
+      ) : (
+        <span className='float-right color-green'>{d.method}</span>
+      )}
+
+
+              
             </div>
           })}
         </div>

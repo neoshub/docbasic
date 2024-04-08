@@ -1,8 +1,30 @@
 {
   "data": [
     {
+      "id": "1123",
+      "displayName": "authorization",
+      "url": "https://api-v3.screenmeet.com/v3/me",
+      "servers": [
+        {
+          "type": "PROD",
+          "url": "https://api-v3.screenmeet.com/v3/me"
+        },
+        {
+          "type": "mockServer",
+          "url": "https://stoplight.io/mocks/screenmeet/screenmeet/64386655/me"
+        }
+      ],
+			"parameters": ["Authorization"],
+      "method": "GET",
+      "detailsText": ["test"],
+      "files": {
+        "success": "currentUser.json",
+        "error": "currentUserError.json"
+      }
+    },
+    {
       "id": "123",
-      "displayName": "Get current user account information",
+      "displayName": "Get User Information",
       "url": "https://api-v3.screenmeet.com/v3/me",
       "servers": [
         {
